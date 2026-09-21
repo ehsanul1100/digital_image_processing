@@ -31,8 +31,10 @@ def log_transformation(image):
     for y in range(height):
         for x in range(width):
             r, g, b = pixels[x,y]
-            s = c * math.log(1 + r)
-            out_pixels[x,y] = (int(s), int(s), int(s))
+            s_r = c * math.log(1 + r)
+            s_g = c * math.log(1 + g)
+            s_b = c * math.log(1 + b)
+            out_pixels[x,y] = (int(s_r), int(s_g), int(s_b))
     return log_image
 
 
@@ -47,8 +49,10 @@ def power_law_gamma_transformation(image, gamma):
     for y in range(height):
         for x in range(width):
             r, g, b = pixels[x,y]
-            s = c * (r ** gamma)
-            out_pixels[x,y] = (int(s), int(s), int(s))
+            s_r = c * (r ** gamma)
+            s_g = c * (g ** gamma)
+            s_b = c * (b ** gamma)
+            out_pixels[x,y] = (int(s_r), int(s_g), int(s_b))
     
     return power_law_gamma_image
 
