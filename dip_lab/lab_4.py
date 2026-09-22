@@ -1,5 +1,4 @@
 # implement histogram equalization and plot equalized and original histogram 
-from PIL.ImageOps import equalize
 import os
 from PIL import Image
 import matplotlib.pyplot as plt
